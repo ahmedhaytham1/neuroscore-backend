@@ -1,0 +1,311 @@
+§
+
+    —gjyI  م                  َ   — d dl mZ d dlZd dlZd dlmZ d dlmZmZm	Z	m
+Z
+ d dlZd dlZd dl
+Zd dlZd dlZd dlmZmZmZmZ d dlmZ d dlmZmZ  ee¦  «                             ¦   «         j        j        Z e dz  Z!e!d	z  Z"e!d
+z  Z#e!dz  Z$e!dz  Z%e!d
+z  Z&g d¢Z'g d¢Z(g d¢Z)g d¢Z* edd¬¦  «        Z+e+ ,                    edgddgdg¬¦  «          ej-        e"¦  «        Z. ej-        e#¦  «        Z/ ej-        e$¦  «        Z0 ej-        e%¦  «        Z1	  ej-        e&¦  «        Z2dZ3n$# e4$ rZ5 e6de5› ‌¦  «         dZ2dZ3Y dZ5[5ndZ5[5ww xY w e7e2e8¦  «        re2 9                    de2¦  «        ne2Z: e7e2e8¦  «        re2 9                    dd¦  «        ndZ;ej<        j=        Z>ej<        j?        Z@ej<        jA        ZBdFdGd#„ZCdHdId-„ZDdJd/„ZEdKd2„ZFdLdMd5„ZGdLdMd6„ZHdNd9„ZIe+ 9                    d:¦  «        dOd<„¦   «         ZJe+ 9                    d=¦  «        dPd>„¦   «         ZKe+ L                    d?¦  «         ed@¦  «        fdQdA„¦   «         ZMe+ L                    dB¦  «         ed@¦  «        fdQdC„¦   «         ZNe+ L                    dD¦  «         ed@¦  «        fdQdE„¦   «         ZOdS )Ré    )عannotationsN)عPath)عDictعListعTupleعAny)عFastAPIعFileع
+UploadFileع
+HTTPException)عCORSMiddleware)عfftعfftfreqعmodelsztremor_random_forest_93.pklzrobust_scaler.pklzromberg_modelnn.pklzromberg_scalernn.pklztandem_back_ensemble.joblib©عMain_Freq_HzعJitterعMax_Dist_ErrorعSmoothness_Accع
+Path_Spread_Xع
+Path_Spread_YعVelocity_StdعSignal_Entropy)عsh_tilt_meanعsh_tilt_stdعsh_tilt_maxع
+sh_tilt_rangeعsh_tilt_p75عsh_tilt_p90ع
+hip_tilt_meanعhip_tilt_stdعhip_tilt_maxعhip_tilt_rangeعhip_tilt_p75عhip_tilt_p90عhip_osc_stdع
+hip_osc_rangeع
+wrist_meanع	wrist_stdع	elbow_stdع
+tilt_vel_meanعtilt_vel_stdع
+lean_gt_15)r   r   r   r   r   r   r    r!   r"   r#   r$   r%   r&   r'   r(   r)   r*   r+   r,   r-   ع
+lean_gt_25ع
+lean_gt_40ع	hip_gt_15ع	hip_gt_25عspine_lat_meanع
+spine_lat_std))i€  éà  )iہ  i  )i   iذ  )r4   i  zParkinson Video AI Backendz1.0.0)عtitleعversionع*T)ع
+allow_originsعallow_credentialsع
+allow_methodsع
+allow_headersz'[WARNING] Tandem model failed to load: FعmodelعnamezTandem ML Modelé   عdْDict[str, Any]عndigitsعintعreturnc                َ4  — i }|                       ¦   «         D ]€\  }}t          |t          j        t          f¦  «        r!t          t	          |¦  «        |¦  «        ||<   ŒGt          |t          j        t          f¦  «        rt          |¦  «        ||<   Œ{|||<   Œپ|S ©N)عitemsع
+isinstanceعnpعfloatingعfloatعroundعintegerrB   )r?   rA   عoutعkعvs        ْPC:\Users\Admin\Desktop\GRAD PROJECT FINALLLLL\parkinson_backend_full\app\main.pyع_round_dictrQ   T   sگ   € ط€Cط—’‘	”	ً ً ‰ˆˆ1فگa‌"œ+¥uذ-ر.ش.ً 	ف‌5 ™8œ8 Wر-ش-ˆCگ‰FˆFف
+ک‌BœJ­ذ,ر
+-ش
+-ً 	فک‘V”VˆCگ‰FˆFàˆCگ‰FˆFط€Jَ    ع	test_nameعstrعprobْ
+np.ndarrayعfeaturesْDict[str, float]عframes_usedع
+chart_dataْDict[str, List[float]] | Nonec                َ\  — t          |d         ¦  «        }t          |d         ¦  «        }|dk    rdnd}t          ||¦  «        dz  }|dz  }	| ||t          |	d¦  «        t          |d¦  «        t          |d¦  «        t          |d¦  «        t          |¦  «        t	          |¦  «        |pi d	œ
+S )
+Nr   é   ç      à?عPATIENTعHEALTHYg      Y@é   r>   )
+عtestعlabelع
+predictionعscoreع
+confidenceع	p_healthyع	p_patientrY   rW   rZ   )rJ   عmaxrK   rB   rQ   )
+rS   rU   rW   rY   rZ   rg   rh   rc   rf   re   s
+             rP   ع_label_payloadrj   `   s¹   € فگdک1”g‘”€Iفگdک1”g‘”€Iط" cز)ذ)ˆIˆI¨y€EفگY 	ر*ش*¨Uر2€Jàکر€Eàططفگuکa‘”فکJ¨ر*ش*فک9 aر(ش(فک9 aر(ش(فک;ر'ش'ف ر)ش)ط ذ& Bًً ً rR   عframec                ٍَ  ‡— d}d|z  ٹt          j        ˆfd„t          j        d¦  «        D ¦   «         ¦  «                             d¦  «        }t	          j        | |¦  «        } t	          j        | t          j        ¦  «        }t	          j        |¦  «        \  }}}t	          j	        dd¬¦  «        }| 
+                    |¦  «        }t	          j        t	          j        |||f¦  «        t          j        ¦  «        S )	Ngحجججججü?g      ً?c                َ&   •— g | ]
+}|d z  ‰z  dz  ‘ŒS )g     ào@éے   © )ع.0عiع	inv_gammas     €rP   ْ
+<listcomp>z-ultra_recovery_processing.<locals>.<listcomp>x   s'   ّ€ ذOذOذO¸1ککE™	 iر/°3ر6ذOذOذOrR   é   عuint8g      @)é   rv   )ع	clipLimitعtileGridSize)
+rH   عarrayعarangeعastypeعcv2عLUTعcvtColorع
+COLOR_BGR2LABعsplitعcreateCLAHEعapplyعmergeع
+COLOR_LAB2BGR)	rk   عgammaعtableعlabعlعaعbعclaherr   s	           @rP   عultra_recovery_processingrŒ   u   sج   ّ€ ط€Eطگe‘€IفŒHذOذOذOذOإؤ	ب#ءؤذOرOشOرPشP×WزWذX_ر`ش`€EفŒGگEک5ر!ش!€Eف
+
+Œ,گu‌cش/ر
+0ش
+0€CفŒiک‰nŒnپG€A€qˆ!فŒO c¸ذ?ر?ش?€Eط
+ڈٹگA‰Œ€AفŒ<‌œ	 1 a¨ )ر,ش,­cش.?ر@ش@ذ@rR   ع
+video_pathْ4Tuple[Dict[str, float], int, Dict[str, List[float]]]c                َ¤
+  ‡+‡,— t          j        | ¦  «        }|                     t           j        ¦  «        pd}g }g }t                               dd¬¦  «        5 }t                               ddd¬¦  «        5 }t           	                    d¬¦  «        5 }| 
+                    ¦   «         گrت|                     ¦   «         \  }}	|sگn¯|	j        d d…         \  ٹ+ٹ,t          |	¦  «        }
+t          j        |
+t           j        ¦  «        }|                     |¦  «        }d	\  }
+}|}|j        rن|j        j        }ˆ,fd
+„|d         |d         |d
+         fD ¦   «         }ˆ+fd„|d         |d         |d
+         fD ¦   «         }t'          d
+t)          |¦  «        dz
+  ¦  «        t'          d
+t)          |¦  «        dz
+  ¦  «        }}t)          ‰,t'          |¦  «        dz   ¦  «        t)          ‰+t'          |¦  «        dz   ¦  «        }}|||…||…f         }||}}
+|j        d
+k    rگŒ„|                     |¦  «        }|                     |¦  «        }|j        گr|j        گr|j        d
+         j        d         }|j        d
+         j        d         }|j        |j        d         z  |
+z   }|j        |j        d
+         z  |z   }|j        |j        d         z  |
+z   }|j        |j        d
+         z  |z   }t5          t7          j        ||z
+  dz  ||z
+  dz  z   ¦  «        ¦  «        }|                     |¦  «         |                     t5          ||z
+  ¦  «        t5          ||z
+  ¦  «        g¦  «         | 
+                    ¦   «         گ°تd d d ¦  «         n# 1 swxY w Y   d d d ¦  «         n# 1 swxY w Y   d d d ¦  «         n# 1 swxY w Y   |                     ¦   «          t?          |¦  «        dk     rtA          d¦  «        ‚t7          j!        |t4          ¬¦  «        } t7          j!        |t4          ¬¦  «        }!tE          | t7          j#        | ¦  «        z
+  ¦  «        }"tI          t?          | ¦  «        d|z  ¦  «        }#t?          | ¦  «        dk    r1t7          j%        t7          j&        |"¦  «        dd …         ¦  «        dz   nd
+}$|$d
+k    rtM          |#|$         ¦  «        nd}%t7          j'        | ¦  «        }&t7          j'        |&¦  «        }'t7          j(        |!d
+¬¦  «        }(tS          t5          |%¦  «        d¦  «        tS          t5          t7          j#        t7          j&        t7          j'        | ¦  «        ¦  «        ¦  «        ¦  «        d¦  «        tS          t5          t7          j        | ¦  «        ¦  «        d¦  «        tS          t?          |'¦  «        r!t5          t7          j#        |'¦  «        ¦  «        ndd¦  «        tS          t5          |(d
+         ¦  «        d¦  «        tS          t5          |(d         ¦  «        d¦  «        tS          t?          |&¦  «        r!t5          t7          j(        |&¦  «        ¦  «        ndd¦  «        tS          t5          t7          j(        | ¦  «        ¦  «        d¦  «        dœ})d„ | d d…         D ¦   «         d„ |&d d…         D ¦   «         dœ}*|)t?          |¦  «        |*fS )Né   r^   ra   )عmin_detection_confidenceعmodel_complexityg333333س?r]   )r‘   عmin_tracking_confidenceع
+max_num_hands)r‘   )r   r   c                َ>   •— g | ]}t          |j        ‰z  ¦  «        ‘ŒS ro   )rB   عx)rp   rˆ   عws     €rP   rs   z+extract_finger_features.<locals>.<listcomp>™   َ%   ّ€ ذDذDذD q•cک!œ# ™'‘l”lذDذDذDrR   é   é   r   c                َ>   •— g | ]}t          |j        ‰z  ¦  «        ‘ŒS ro   )rB   عy)rp   rˆ   عhs     €rP   rs   z+extract_finger_features.<locals>.<listcomp>ڑ   rک   rR   é–   éب   rv   é   zUNot enough hand/face landmarks detected. Make sure face and index finger are visible.©عdtypeé
+   ç        )عaxisr>   é   r   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S ©é   ©rK   rJ   ©rp   r–   s     rP   rs   z+extract_finger_features.<locals>.<listcomp>ذ   s(   € ذDذDذD°1‌E¥%¨،(¤(¨Aر.ش.ذDذDذDrR   éx   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r¨   rھ   r«   s     rP   rs   z+extract_finger_features.<locals>.<listcomp>ر   s(   € ذGذGذG°1‌E¥%¨،(¤(¨Aر.ش.ذGذGذGrR   )عdistance_signalعvelocity_signal)*r|   عVideoCaptureعgetعCAP_PROP_FPSعmp_poseعPoseعmp_handsعHandsعmp_face_meshعFaceMeshعisOpenedعreadعshaperŒ   r~   ع
+COLOR_BGR2RGBعprocessعpose_landmarksعlandmarkri   عminعsizeعmulti_face_landmarksعmulti_hand_landmarksr–   rœ   rJ   rH   عsqrtعappendعreleaseعlenع
+ValueErrorry   r   عmeanr   عargmaxعabsعdiffعstdrK   )-rچ   عcapعfpsع	distancesعcoordsعposeعhandsع	face_meshعretrk   عenhancedعrgbعpose_resعoffset_xعoffset_yعroi_rgbعlmعxsعysعx1عy1عx2عy2عface_resعhand_resعnoseعfingerعnxعnyعfxعfyعdistعdistsع
+coords_arrعyfعxfعidxع	main_freqعvelocityعaccelerationعpath_spreadrW   عchartr‌   r—   s-                                              @@rP   عextract_finger_featuresrِ   پ   sï  ّّ€ ف
+
+ش
+ک:ر
+&ش
+&€Cط
+
+ڈ'ٹ'•#ش"ر
+#ش
+#ذ
+) r€Cط€Iط "€Fه	ڈٹ¨sہQˆر	Gش	Gً *@ب4ف	ڈٹ°بcذabˆر	cش	cً*@طglف	×	ز	¸ذ	ر	<ش	<ً*@à@Iطڈlٹl‰nŒnٌ '	@طںڑ™œ‰JˆCگطً 
+ظà”;کr کr”?‰DˆAˆqف0°ر7ش7ˆHف”,کx­ش):ر;ش;ˆCà—|’| Cر(ش(ˆHط!%رˆHگhطˆGàش&ً 
+,طش,ش5گطDذDذDذD¨R°¬V°R¸´V¸Rہ¼Uذ,CذDرDشDگطDذDذDذD¨R°¬V°R¸´V¸Rہ¼Uذ,CذDرDشDگفکQ¥ B،¤¨#،
+ر.ش.µ°Aµs¸2±w´wہ±}ر0Eش0EگBگفکQ¥ B،¤¨#،
+ر.ش.µ°Aµs¸2±w´wہ±}ر0Eش0EگBگطکb کe R¨ Uکlش+گط%'¨ک(گàŒ|کqز ذ ظà ×(ز(¨ر1ش1ˆHط—}’} Wر-ش-ˆHàش,ٌ 
+@°ش1Nٌ 
+@طش4°Qش7ش@ہشCگط!ش6°qش9شBہ1شEگà”Vکgœm¨Aش.ر.°ر9گط”Vکgœm¨Aش.ر.°ر9گط”X ¤
+¨aش 0ر0°8ر;گط”X ¤
+¨aش 0ر0°8ر;گه‌RœW b¨2،g°!،^°r¸B±wہ1±nر%DرEشEرFشFگط× ز  ر&ش&ذ&ط—
+’
+‌u R¨"،W™~œ~­u°R¸"±W©~¬~ذ>ر?ش?ذ?ًO ڈlٹl‰nŒnٌ '	@ً*@ً *@ً *@ٌ *@ô *@ً *@ً *@ً *@ً *@ً *@ً *@ًّّّ *@ً *@ً *@ً *@ً *@ً *@ً *@ٌ *@ô *@ً *@ً *@ً *@ً *@ً *@ً *@ًّّّ *@ً *@ً *@ً *@ً *@ً *@ً *@ٌ *@ô *@ً *@ً *@ً *@ً *@ً *@ً *@ًّّّ *@ً *@ً *@ً *@ًX ‡K‚KپM„M€Mه
+ˆ9پ~„~کزذفذpرqشqذqهŒHگY¥eذ,ر,ش,€Eف”ک&­ذ.ر.ش.€Jه	ˆU•R”WکU‘^”^ر
+#ر	$ش	$€Bف	•گU‘”کQ ™Wر	%ش	%€Bف+.¨u©:¬:¸ھ?¨?چ"Œ)•B”Fک2‘J”Jکqکrکr”Nر
+#ش
+# aر
+'ذ
+'ہ€Cط # a¢ •گBگs”G‘”گ¨S€IهŒwگu‰~Œ~€Hف”7ک8ر$ش$€Lف”&ک¨!ذ,ر,ش,€Kُ ‌e Iر.ش.°ر2ش2ف‌‌bœg¥b¤f­R¬W°U©^¬^ر&<ش&<ر=ش=ر>ش>ہرBشBف¥¥b¤f¨U،m¤mر 4ش 4°aر8ش8فإہLر@Qش@Qذ Z¥¥b¤g¨lر&;ش&;ر <ش <ذ <ذWZذ\]ر^ش^ف‌u [°¤^ر4ش4°aر8ش8ف‌u [°¤^ر4ش4°aر8ش8ف½¸X¹¼ذO‌e¥B¤F¨8ر$4ش$4ر5ش5ذ5بCذQRرSشSف¥¥b¤f¨U،m¤mر 4ش 4°aر8ش8ً	ً 	€Hً EذD¸¸d¸s¸d¼ذDرDشDطGذG¸ہہ#ہ¼ذGرGشGً
+ً 
+€Eً •Sک‘^”^ Uذ*ذ*s[   ءN,ء6NآK M>ح2Nح>NخNخNخNخ	N,خN	خN,خN	خN,خ,N0خ3N0rگ   عn_framesc                َ  — t          j        | ¦  «        }t          |                     t           j        ¦  «        ¦  «        }|dk     r#|                     ¦   «          t
+          d¦  «        ‚t          j        d|dz
+  |t          ¬¦  «        }g }t           
+                    dddd¬¦  «        5 }|D ]ç}|                     t           j        t          |¦  «        ¦  «         | 
+                    ¦   «         \  }}	|sŒIt          D ]–}
+t          j        t          j        |	|
+¦  «        t           j        ¦  «        }|                     |¦  «        }|j        rFt          j        d	„ |j        j        D ¦   «         t,          ¬¦  «        }
+|                     |
+¦  «          nŒ—Œè	 d d d ¦  «         n# 1 swxY w Y   |                     ¦   «          t1          |¦  «        d
+k     rt
+          d¦  «        ‚d„ |D ¦   «         }t          j        d
+„ |D ¦   «         ¦  «        }t-          t          j        |¦  «        dz   ¦  «        }t          j        d„ |D ¦   «         ¦  «        }t          j        d„ |D ¦   «         ¦  «        }t          j        d„ |D ¦   «         ¦  «        }|t          j        |¦  «        z
+  }t          j        |¦  «        |z  }t          j        |¦  «        t          j        |¦  «        z
+  |z  }t          j        d„ |D ¦   «         ¦  «        }t          j        |¦  «        |z  }t          j        |¦  «        |z  }t          j        d„ |D ¦   «         ¦  «        }t          j        |¦  «        |z  }t          j        t          j        |¦  «        ¦  «        }t1          |¦  «        r|                     ¦   «         nd}t1          |¦  «        r|                     ¦   «         nd}t          j        |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         z
+  t          j        |d¦  «        t          j        |d¦  «        |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         z
+  t          j        |d¦  «        t          j        |d¦  «        |||||||t          j        |dk    ¦  «        gt,          ¬¦  «        }d„ tA          tB          |¦  «        D ¦   «         } d„ |d d…         D ¦   «         d„ |d d…         D ¦   «         d„ |d d…         D ¦   «         dœ}!| t1          |¦  «        |!fS )Nra   ْVideo has too few frames.r   r]   r،   Fçڑ™™™™™ظ?©عstatic_image_moder’   r‘   r“   c                َB   — g | ]}|j         |j        |j        |j        g‘ŒS ro   ©r–   rœ   عzع
+visibility©rp   rˆ   s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>ى   َ)   € ذ#eذ#eذ#eہa Q¤S¨!¬#¨q¬s°A´Lذ$Aذ#eذ#eذ#erR   é   ْGNot enough body landmarks detected. Make sure the full body is visible.c                َ*   — g | ]}|d d …d d…f         ‘ŒS ©Nr©   ro   ©rp   عss     rP   rs   z,extract_romberg_features.<locals>.<listcomp>ô   َ(   € ذ
+$ذ
+$ذ
+$کˆ1ˆQˆQˆQگگگˆUŒ8ذ
+$ذ
+$ذ
+$rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S ©©r™   r   ©rڑ   r   ©rث   ©rp   rـ   s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>ُ   َ-   € ذFذFذF¸B‌S  E¤¨R°¬Yر!6ر7ش7ذFذFذFrR   çچيµ ÷ئ°>c                َز   — g | ]d}t          j        t          j        t          |d          |d         z
+  ¦  «        t          |d         |d         z
+  ¦  «        dz   ¦  «        ¦  «        ‘ŒeS ©)r™   r]   )rڑ   r]   r  r
+  r  ©rH   عdegreesعarctan2rث   r  s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>ّ   َn   € ً ً ً àُ 	Œ
+•2”:‌c " U¤)¨b°¬iر"7ر8ش8½#¸bہ¼iب"بUج)ر>Sر:Tش:TذW[ر:[ر\ش\ر]ش]ًً ً rR   c                َز   — g | ]d}t          j        t          j        t          |d          |d         z
+  ¦  «        t          |d         |d         z
+  ¦  «        dz   ¦  «        ¦  «        ‘ŒeS ©)é   r]   )é   r]   ©r  r   ©r  r   r  r  r  s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>ü   َn   € ً ً ً àُ 	Œ
+•2”:‌c " U¤)¨b°¬iر"7ر8ش8½#¸bہ¼iب"بUج)ر>Sر:Tش:TذW[ر:[ر\ش\ر]ش]ًً ً rR   c                َ6   — g | ]}|d          |d         z   dz  ‘ŒS ©r  r  ra   ro   r  s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>  َ*   € ذ@ذ@ذ@°bگrک%”y 2 e¤9ر,°ر1ذ@ذ@ذ@rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S ©)r    r   )é   r   r  r  s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>  r  rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S ©)é
+   r   )é   r   r  r  s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>
+  r  rR   r¤   éK   éZ   r    c                َP   — i | ]#\  }}|t          t          |¦  «        d ¦  «        “Œ$S ©r>   rھ   ©rp   r=   عvals      rP   ْ
+<dictcomp>z,extract_romberg_features.<locals>.<dictcomp>  s.   € ذZذZذZ©y¨t°Sگ•e‌E #™JœJ¨ر*ش*ذZذZذZrR   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r¨   rھ   r«   s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>  َ(   € ذ Lذ Lذ L¸¥¥u¨Q،x¤x°ر!3ش!3ذ Lذ Lذ LrR   r¬   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r¨   rھ   r«   s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>   َ(   € ذHذHذH°1‌E¥%¨،(¤(¨Aر.ش.ذHذHذHrR   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r,  rھ   r«   s     rP   rs   z,extract_romberg_features.<locals>.<listcomp>!  َ(   € ذFذFذF°1‌E¥%¨،(¤(¨Aر.ش.ذFذFذFrR   )عshoulder_tilt_signalعhip_tilt_signalعhip_sway_signal)"r|   r°   rB   r±   عCAP_PROP_FRAME_COUNTrئ   rب   rH   عlinspacer³   r´   عsetعCAP_PROP_POS_FRAMESr؛   عRESOLUTIONSr~   عresizer¼   r½   r¾   ry   r؟   rJ   rإ   rا   rة   rح   ri   rہ   rث   rج   ع
+percentileعzipعROMBERG_FEATURES)"rچ   r÷   rخ   عtotalعindicesعlm_seqrز   rً   rص   rk   عresr×   عrعarrعlm3عtorso_widthsعtorso_wعsh_tiltsع	hip_tiltsعhip_xعhip_x_cr&   r'   عwrist_spreadعwrist_spread_stdعwrist_spread_meanعelbow_spreadعelbow_spread_stdعsh_tilt_diffعsh_tilt_velocity_meanعsh_tilt_velocity_stdعvaluesrW   rُ   s"                                     rP   عextract_romberg_featuresrX  ض   s[  € ف
+
+ش
+ک:ر
+&ش
+&€Cفگ—’‌ش0ر1ش1ر2ش2€Eطˆq‚y€yطڈٹ‰
+Œ
+ˆ
+فذ4ر5ش5ذ5هŒkک!کU Q™Y¨½ذ<ر<ش<€Gط!€Fه	ڈٹ¨ہط/2ط.1ً 
+ٌ 
+3ô 
+3ً à6:طً 	ً 	ˆCطڈGٹG•Cش+­S°©X¬Xر6ش6ذ6طںڑ™œ‰JˆCگطً 
+طف"ً 
+ً 
+گف”l¥3¤:¨e°Sر#9ش#9½3ش;LرMشMگط—L’L ر%ش%گطش#ً فœ(ذ#eذ#eب1شK[شKdذ#eر#eش#eصmrذsرsشsگCط—M’M #ر&ش&ذ&طگEًًّ	ًً ً ٌ ô ً ً ً ً ً ً ًّّّ ً ً ً ً ‡K‚KپM„M€Mه
+ˆ6پ{„{گQ‚€فذbرcشcذcà
+$ذ
+$کVذ
+$ر
+$ش
+$€Cف”8ذFذFہ#ذFرFشFرGشG€Lف•B”GکLر)ش)¨Dر0ر1ش1€GهŒxً ً àًٌ ô ٌ ô €Hُ ”ً ً àًٌ ô ٌ ô €Iُ
+ 
+ŒHذ@ذ@¸Cذ@ر@ش@رAشA€Eط•b”gکe‘n”nر$€Gف”&ک‘/”/ Gر+€Kف”VکG‘_”_¥r¤v¨g،¤ر6¸'رA€Mه”8ذFذFہ#ذFرFشFرGشG€Lف”vکlر+ش+¨gر5ذفœ ر-ش-°ر7ذه”8ذFذFہ#ذFرFشFرGشG€Lف”vکlر+ش+¨gر5ذه”6‌"œ' (ر+ش+ر,ش,€Lف36°|ر3Dش3DذMکL×-ز-ر/ش/ذ/ب#ذف14°\ر1Bش1BذKک<×+ز+ر-ش-ذ-بذُ ŒXطڈ
+ٹ
+‰Œکںڑ™œ¨¯ھ©¬¸؟؛¹¼ب(د,ت,ة.ج.ر9Xف
+Œ
+گh ر#ش#¥R¤]°8¸Rر%@ش%@طڈٹرشک)ں-ڑ-™/œ/¨9¯=ھ=©?¬?¸I؟M؛M¹O¼Oبiدmتmةoجoر<]ف
+Œ
+گi ر$ش$¥b¤m°I¸rر&Bش&Bطگ]طذ+ذ-=طذ3ف
+Œگک2’
+رشً	ُ ً	ٌ 	ô 	€Fً [ذZ½Cص@PذRXر<Yش<YذZرZشZ€Hà Lذ L¸Xہdہsہd¼^ذ Lر Lش LطHذH¸	ہ$ہ3ہ$¼ذHرHشHطFذF¸ہہہ¼
+ذFرFشFً
+ً 
+€Eً
+ •Sک‘[”[ %ذ'ذ'َ   آ*C+F"ئ"F&ئ)F&c                َ\
+  — t          j        | ¦  «        }t          |                     t           j        ¦  «        ¦  «        }|dk     r#|                     ¦   «          t
+          d¦  «        ‚t          j        d|dz
+  |t          ¬¦  «        }g }t           
+                    dddd¬¦  «        5 }|D ]ç}|                     t           j        t          |¦  «        ¦  «         | 
+                    ¦   «         \  }}	|sŒIt          D ]–}
+t          j        t          j        |	|
+¦  «        t           j        ¦  «        }|                     |¦  «        }|j        rFt          j        d	„ |j        j        D ¦   «         t,          ¬¦  «        }
+|                     |
+¦  «          nŒ—Œè	 d
+d
+d
+¦  «         n# 1 swxY w Y   |                     ¦   «          t1          |¦  «        dk     rt
+          d¦  «        ‚d
+„ |D ¦   «         }t          j        d„ |D ¦   «         ¦  «        }t-          t          j        |¦  «        dz   ¦  «        }t          j        d„ |D ¦   «         ¦  «        }t          j        d„ |D ¦   «         ¦  «        }t          j        d„ |D ¦   «         ¦  «        }|t          j        |¦  «        z
+  }t          j        |¦  «        |z  }t          j        |¦  «        t          j        |¦  «        z
+  |z  }t          j        d„ |D ¦   «         ¦  «        }t          j        |¦  «        |z  }t          j        |¦  «        |z  }t          j        d„ |D ¦   «         ¦  «        }t          j        |¦  «        |z  }t          j        t          j        |¦  «        ¦  «        }t1          |¦  «        r|                     ¦   «         nd}t1          |¦  «        r|                     ¦   «         nd}t          j        |dk    ¦  «        }t          j        |dk    ¦  «        } t          j        |dk    ¦  «        }!t          j        |dk    ¦  «        }"t          j        |dk    ¦  «        }#t          j        d„ |D ¦   «         ¦  «        }$t          j        d„ |D ¦   «         ¦  «        }%|$|%z
+  }&t          j        |&d
+d
+…df         ¦  «        t          j        |&d
+d
+…df         ¦  «        dz   z  }'t          j        |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         z
+  t          j        |d¦  «        t          j        |d¦  «        |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         |                     ¦   «         z
+  t          j        |d¦  «        t          j        |d¦  «        ||||||||| |!|"|#|'                     ¦   «         |'                     ¦   «         gt,          ¬¦  «        }(d„ tA          tB          |(¦  «        D ¦   «         })d„ |d
+d…         D ¦   «         d „ |d
+d…         D ¦   «         d!„ |d
+d…         D ¦   «         d"„ |'d
+d…         D ¦   «         d#œ}*|)t1          |¦  «        |*fS )$zHExtract the 26 lateral sway / lean features used by the Tandem notebook.ra   rù   r   r]   r،   Frْ   rû   c                َB   — g | ]}|j         |j        |j        |j        g‘ŒS ro   r‏   r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>=  r  rR   Nr  r  c                َ*   — g | ]}|d d …d d…f         ‘ŒS r  ro   r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>E  r	  rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S r  r  r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>F  r  rR   r  c                َز   — g | ]d}t          j        t          j        t          |d          |d         z
+  ¦  «        t          |d         |d         z
+  ¦  «        dz   ¦  «        ¦  «        ‘ŒeS r  r  r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>I  r  rR   c                َز   — g | ]d}t          j        t          j        t          |d          |d         z
+  ¦  «        t          |d         |d         z
+  ¦  «        dz   ¦  «        ¦  «        ‘ŒeS r  r  r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>M  r  rR   c                َ6   — g | ]}|d          |d         z   dz  ‘ŒS r   ro   r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>R  r!  rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S r#  r  r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>W  r  rR   c                َJ   — g | ] }t          |d          |d         z
+  ¦  «        ‘Œ!S r&  r  r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>[  r  rR   r¤   r    é   é(   c                َ6   — g | ]}|d          |d         z   dz  ‘ŒS )r™   rڑ   ra   ro   r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>h  s)   € ذ<ذ<ذ<°"ککBœ " R¤&™¨Aر-ذ<ذ<ذ<rR   c                َ6   — g | ]}|d          |d         z   dz  ‘ŒS )r  r  ra   ro   r  s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>i  s)   € ذ=ذ=ذ=°2ک"کRœ& 2 b¤6™/¨Qر.ذ=ذ=ذ=rR   r)  r*  c                َP   — i | ]#\  }}|t          t          |¦  «        d ¦  «        “Œ$S r,  rھ   r-  s      rP   r/  z+extract_tandem_features.<locals>.<dictcomp>z  s.   € ذYذYذY©y¨t°Sگ•e‌E #™JœJ¨ر*ش*ذYذYذYrR   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r¨   rھ   r«   s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>|  r1  rR   r¬   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r¨   rھ   r«   s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>}  r3  rR   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r,  rھ   r«   s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>~  r5  rR   c                َH   — g | ]}t          t          |¦  «        d ¦  «        ‘Œ S r,  rھ   r«   s     rP   rs   z+extract_tandem_features.<locals>.<listcomp>  s(   € ذ Qذ Qذ Q¸¥¥u¨Q،x¤x°ر!3ش!3ذ Qذ Qذ QrR   )r6  r7  r8  عspine_lateral_signal)"r|   r°   rB   r±   r9  rئ   rب   rH   r:  r³   r´   r;  r<  r؛   r=  r~   r>  r¼   r½   r¾   ry   r؟   rJ   rإ   rا   rة   rح   ri   rہ   rث   rج   r?  r@  عTANDEM_FEATURES)+rچ   r÷   rخ   rB  rC  rD  rز   rً   rص   rk   rE  r×   rF  rG  rH  rI  rJ  rK  rL  rM  rN  r&   r'   rO  rP  rQ  rR  rS  rT  rU  rV  ع
+large_lean_15ع
+large_lean_25ع
+large_lean_40عlarge_hip_15عlarge_hip_25عsh_midsعhip_midsعspineع
+spine_lateralrW  rW   rُ   s+                                              rP   عextract_tandem_featuresrw  &  sj  € ه
+
+ش
+ک:ر
+&ش
+&€Cفگ—’‌ش0ر1ش1ر2ش2€Eطˆq‚y€yطڈٹ‰
+Œ
+ˆ
+فذ4ر5ش5ذ5هŒkک!کU Q™Y¨½ذ<ر<ش<€Gط!€Fه	ڈٹ¨ہط/2ط.1ً 
+ٌ 
+3ô 
+3ً à6:طً 	ً 	ˆCطڈGٹG•Cش+­S°©X¬Xر6ش6ذ6طںڑ™œ‰JˆCگطً 
+طف"ً 
+ً 
+گف”l¥3¤:¨e°Sر#9ش#9½3ش;LرMشMگط—L’L ر%ش%گطش#ً فœ(ذ#eذ#eب1شK[شKdذ#eر#eش#eصmrذsرsشsگCط—M’M #ر&ش&ذ&طگEًًّ	ًً ً ٌ ô ً ً ً ً ً ً ًّّّ ً ً ً ً ‡K‚KپM„M€Mه
+ˆ6پ{„{گQ‚€فذbرcشcذcà
+$ذ
+$کVذ
+$ر
+$ش
+$€Cف”8ذFذFہ#ذFرFشFرGشG€Lف•B”GکLر)ش)¨Dر0ر1ش1€GهŒxً ً àًٌ ô ٌ ô €Hُ ”ً ً àًٌ ô ٌ ô €Iُ
+ 
+ŒHذ@ذ@¸Cذ@ر@ش@رAشA€Eط•b”gکe‘n”nر$€Gف”&ک‘/”/ Gر+€Kف”VکG‘_”_¥r¤v¨g،¤ر6¸'رA€Mه”8ذFذFہ#ذFرFشFرGشG€Lف”vکlر+ش+¨gر5ذفœ ر-ش-°ر7ذه”8ذFذFہ#ذFرFشFرGشG€Lف”vکlر+ش+¨gر5ذه”6‌"œ' (ر+ش+ر,ش,€Lف36°|ر3Dش3DذMکL×-ز-ر/ش/ذ/ب#ذف14°\ر1Bش1BذKک<×+ز+ر-ش-ذ-بذه”GکH rڑMر*ش*€Mف”GکH rڑMر*ش*€Mف”GکH rڑMر*ش*€Mف”7ک9 rڑ>ر*ش*€Lف”7ک9 rڑ>ر*ش*€LهŒhذ<ذ<¸ذ<ر<ش<ر=ش=€GفŒxذ=ذ=¸ذ=ر=ش=ر>ش>€Hطگhر€Eف”Fک5    A œ;ر'ش'­2¬6°%¸¸¸¸1¸´+ر+>ش+>ہر+EرF€Mه
+ŒXطڈ
+ٹ
+‰Œکںڑ™œ¨¯ھ©¬¸؟؛¹¼ب(د,ت,ة.ج.ر9Xف
+Œ
+گh ر#ش#¥R¤]°8¸Rر%@ش%@طڈٹرشک)ں-ڑ-™/œ/¨9¯=ھ=©?¬?¸I؟M؛M¹O¼Oبiدmتmةoجoر<]ف
+Œ
+گi ر$ش$¥b¤m°I¸rر&Bش&Bطگ]طذ+ذ-=طذ3طگ} mطگlط×زرشکm×/ز/ر1ش1ًُ ًٌ ô €Fً ZذY½CإذQWر<Xش<XذYرYشY€Hà Lذ L¸Xہdہsہd¼^ذ Lر Lش LطHذH¸	ہ$ہ3ہ$¼ذHرHشHطFذF¸ہہہ¼
+ذFرFشFط Qذ Q¸]ب4بCب4ش=Pذ Qر Qش Qً	
+ً 
+€Eً •Sک‘[”[ %ذ'ذ'rY  عvideor   c              ƒ  َ  K  — t          | j        pd¦  «        j        pd}t          j        d|¬¦  «        5 }|                      ¦   «         ƒ d {V —†}|                     |¦  «         |j        cd d d ¦  «         S # 1 swxY w Y   d S )Nz	video.mp4z.mp4F)عdeleteعsuffix)r   عfilenamer{  عtempfileعNamedTemporaryFiler؛   عwriter=   )rx  r{  عtmpعcontents       rP   ع_save_uploadr‚  „  sد   è è € ف
+گ%”.ذ/ Kر
+0ش
+0ش
+7ذ
+A¸6€Fف	ش	$¨E¸&ذ	Aر	Aش	Aً ہSطں
+ڑ
+™œذ$ذ$ذ$ذ$ذ$ذ$ˆطڈ	ٹ	گ'رشذطŒxًً ً ً ٌ ô ً ً ً ً ً ً ًّّّ ً ً ً ً ً s   ¶6A9ء9A=آ A=ْ/ْDict[str, str]c                 َ   — dddœS )NعokzParkinson AI backend is running)عstatusعmessagero   ro   rR   rP   عrootr‰  Œ  s   € àذ'HذIذIذIrR   z/healthc                 َ  — dt                                ¦   «         t                               ¦   «         t                               ¦   «         t                               ¦   «         t
+                               ¦   «         t          dœS )Nr†  )r‡  عfinger_modelع
+finger_scalerع
+romberg_modelعromberg_scalerعtandem_modelعtandem_model_name)عFINGER_MODEL_PATHعexistsعFINGER_SCALER_PATHعROMBERG_MODEL_PATHعROMBERG_SCALER_PATHعTANDEM_MODEL_PATHrگ  ro   rR   rP   عhealthr—  ‘  sd   € ً ف)×0ز0ر2ش2ف+×2ز2ر4ش4ف+×2ز2ر4ش4ف-×4ز4ر6ش6ف)×0ز0ر2ش2ف.ًً ً rR   z/analyze/finger.c              ƒ  َL  ‡K  — t          | ¦  «        ƒ d {V —†}	 t          |¦  «        \  ٹ}}t          j        ˆfd„t          D ¦   «         gt          ¬¦  «        }t
+                               |¦  «        }t                               |¦  «        d         }t          d|‰||¦  «        	 t          j        |¦  «         S # t          $ r Y S w xY w# t          $ r#}t          dt          |¦  «        ¬¦  «        ‚d }~ww xY w# 	 t          j        |¦  «         w # t          $ r Y w w xY wxY w)Nc                َ    •— g | ]
+}‰|         ‘ŒS ro   ro   ©rp   rN   rW   s     €rP   rs   z"analyze_finger.<locals>.<listcomp>£  s   ّ€ ذ@ذ@ذ@¨1ک8 Aœ;ذ@ذ@ذ@rR   )عcolumnsr   عfinger_to_noseé¦  ©عstatus_codeعdetail)r‚  rِ   عpdع	DataFrameعFINGER_FEATURESrŒ  ع	transformr‹  ع
+predict_probarj   عosعremoveعOSErrorع	Exceptionr   rT   )	rx  عpathrY   rُ   عXعX_scaledrU   عexcrW   s	           @rP   عanalyze_fingerr®  ‍  sP  ّè è € هکeر$ش$ذ$ذ$ذ$ذ$ذ$ذ$€Dًف'>¸tر'Dش'Dر$ˆگ+کuفŒLذ@ذ@ذ@ذ@µذ@ر@ش@ذAح?ذ[ر[ش[ˆف ×*ز*¨1ر-ش-ˆف×)ز)¨(ر3ش3°Aش6ˆفذ.°°hہبUرSشSً	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ُّّّّ ً >ً >ً >ف¨µC¸±H´Hذ=ر=ش=ذ=ًّّّّ>ًّّّّ	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ّّّّّّsZ   ڑBC آ'B<آ<
+C	أC	أ
+C9أC4أ4C9أ9C< أ<D#أ>DؤD#ؤ
+D ؤD#ؤD ؤ D#z/analyze/rombergc              ƒ  َZ  ‡	K  — t          | ¦  «        ƒ d {V —†}	 t          |¦  «        \  ٹ	}}t          j        ˆ	fd„t          D ¦   «         gt
+          ¬¦  «        }t                               |¦  «        }t           	                    |¦  «        d         }t          d|‰	||¦  «        }d|d<   |	 t          j        |¦  «         S # t          $ r Y S w xY w# t          $ r#}t          dt!          |¦  «        ¬¦  «        ‚d }~ww xY w# 	 t          j        |¦  «         w # t          $ r Y w w xY wxY w)	Nc                َ    •— g | ]
+}‰|         ‘ŒS ro   ro   rڑ  s     €rP   rs   z#analyze_romberg.<locals>.<listcomp>µ  s   ّ€ ذ=ذ=ذ= qگx ”{ذ=ذ=ذ=rR   r،   r   عrombergzکRomberg model expects 20 features; backend uses first 20 features from supplied notebook order. Confirm with original training CSV for maximum accuracy.عwarningr‌  r‍  )r‚  rX  rH   ry   rA  rJ   rژ  r¤  rچ  r¥  rj   r¦  r§  r¨  r©  r   rT   )
+rx  rھ  rY   rُ   r«  r¬  rU   عpayloadr­  rW   s
+            @rP   عanalyze_rombergr´  °  sb  ّè è € هکeر$ش$ذ$ذ$ذ$ذ$ذ$ذ$€Dًف'?ہر'Eش'Eر$ˆگ+کuفŒHذ=ذ=ذ=ذ=ص,<ذ=ر=ش=ذ>إeذLرLشLˆف!×+ز+¨Aر.ش.ˆف×*ز*¨8ر4ش4°Qش7ˆف  ¨D°(¸KبرOشOˆً xˆگ	رطً	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ُّّّّ ً >ً >ً >ف¨µC¸±H´Hذ=ر=ش=ذ=ًّّّّ>ًّّّّ	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ّّّّّّsZ   ڑBC آ.Cأ
+CأCأ
+D أC;أ;D ؤ D ؤD*ؤDؤD*ؤ
+D'ؤ$D*ؤ&D'ؤ'D*z/analyze/tandemc              ƒ  َJ  ‡K  — t           sddddœS t          | ¦  «        ƒ d {V —†}	 t          |¦  «        \  ٹ}}t          j        ˆfd„t
+          D ¦   «         gt          ¬¦  «        }t                               |¦  «        d         }t          d|‰||¦  «        }t          |d<   |	 t          j        |¦  «         S # t          $ r Y S w xY w# t          $ r#}t          d	t!          |¦  «        ¬
+¦  «        ‚d }~ww xY w# 	 t          j        |¦  «         w # t          $ r Y w w xY wxY w)Nعtandemz$Tandem model temporarily unavailablezhFinger and Romberg are working. Tandem model needs to be re-saved with compatible numpy/joblib versions.)rb   عerrorrˆ  c                َ    •— g | ]
+}‰|         ‘ŒS ro   ro   rڑ  s     €rP   rs   z"analyze_tandem.<locals>.<listcomp>ذ  s   ّ€ ذ<ذ<ذ< qگx ”{ذ<ذ<ذ<rR   r،   r   ع
+model_namer‌  r‍  )عTANDEM_AVAILABLEr‚  rw  rH   ry   rm  rJ   rڈ  r¥  rj   rگ  r¦  r§  r¨  r©  r   rT   )	rx  rھ  rY   rُ   r«  rU   r³  r­  rW   s	           @rP   عanalyze_tandemr»  ؤ  sp  ّè è € هً 
+àط;ً Bً
+ً 
+ً 	
+ُ کeر$ش$ذ$ذ$ذ$ذ$ذ$ذ$€Dً
+ف'>¸tر'Dش'Dر$ˆگ+کuفŒHذ<ذ<ذ<ذ<­Oذ<ر<ش<ذ=إUذKرKشKˆف×)ز)¨!ر,ش,¨Qش/ˆف  ¨4°¸;برNشNˆف 1ˆگرطً	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ُّّّّ ً >ً >ً >ف¨µC¸±H´Hذ=ر=ش=ذ=ًّّّّ>ًّّّّ	فŒIگd‰OŒOˆOˆOّفً 	ً 	ً 	طˆDً	ّّّّّّsZ   §A>C آ&B;آ;
+CأCأ
+C8أC3أ3C8أ8C; أ;D"أ=DؤD"ؤ
+DؤD"ؤDؤD"r,  )r?   r@   rA   rB   rC   r@   rE   )rS   rT   rU   rV   rW   rX   rY   rB   rZ   r[   rC   r@   )rk   rV   rC   rV   )rچ   rT   rC   rژ   )rگ   )rچ   rT   r÷   rB   rC   rژ   )rx  r   rC   rT   )rC   r„  )rC   r@   )rx  r   rC   r@   )Pع
+__future__r   r¦  r}  عpathlibr   عtypingr   r   r   r   r|   عjoblibع	mediapipeعmpعnumpyrH   عpandasr،  عfastapir	   r
+   r   r   عfastapi.middleware.corsr
+   ع	scipy.fftr   r   ع__file__عresolveعparentعBASE_DIRع	MODEL_DIRr‘  r“  r”  r•  r–  r£  rA  rm  r=  عappعadd_middlewareعloadr‹  rŒ  rچ  rژ  ع_tandem_objr؛  r©  عeعprintrG   عdictr±   rڈ  rگ  ع	solutionsrز   r³   rس   rµ   rش   r·   rQ   rj   rŒ   rِ   rX  rw  r‚  r‰  r—  عpostr®  r´  r»  ro   rR   rP   ْ<module>rص     sع  ًط "ذ "ذ "ذ "ذ "ذ "à 	€	€	€	ط €€€ط ذ ذ ذ ذ ذ ط )ذ )ذ )ذ )ذ )ذ )ذ )ذ )ذ )ذ )ذ )ذ )à 
+€
+€
+€
+ط 
+€
+€
+€
+ط ذ ذ ذ ط ذ ذ ذ ط ذ ذ ذ ط <ذ <ذ <ذ <ذ <ذ <ذ <ذ <ذ <ذ <ذ <ذ <ط 2ذ 2ذ 2ذ 2ذ 2ذ 2ط "ذ "ذ "ذ "ذ "ذ "ذ "ذ "àˆ4گ‰>Œ>×!ز!ر#ش#ش*ش1€طگxر€	àذ =ر=ذ طذ!4ر4ذ طذ!6ر6ذ طذ"8ر8ذ طذ =ر=ذ ًً ً €ًً ً ذ ًً ً €ً @ذ?ذ?€à
+€gذ0¸'ذBرBشB€ط × ز ططگ%ططگ%طگ%ً ٌ ô ً ً ˆvŒ{ذ,ر-ش-€طگ”ذ.ر/ش/€
+طگ”ذ.ر/ش/€
+طگ”ذ0ر1ش1€ًطگ&”+ذ/ر0ش0€Kطذذّطً ً ً ط	€Eذ
+7°Aذ
+7ذ
+7ر8ش8ذ8ط€Kطذذذذذذًّّّّًّّّ 9C¸
+ہ;ذPTر8Uش8Uذfˆ{ڈٹکw¨ر4ش4ذ4ذ[f€طBLہ*ب[ذZ^رB_شB_ذvگK—O’O Fذ,=ر>ش>ذ>ذevذ à
+Œ,ش
+€ط
+Œ<ش€طŒ|ش%€ً	ً 	ً 	ً 	ً 	ًً ً ً ً ً*	Aً 	Aً 	Aً 	AًR+ً R+ً R+ً R+ًjM(ً M(ً M(ً M(ً M(ً`[(ً [(ً [(ً [(ً [(ً|ً ً ً ً ‡‚ˆپ„ًJً Jً Jٌ „ًJً ‡‚ˆرشً	ً 	ً 	ٌ شً	ً ‡‚ذ
+رشط-1¨T°#©Y¬Yً ً ً ً ٌ شًً" ‡‚ذ
+رشط.2¨d°3©i¬iً ً ً ً ٌ شًً& ‡‚ذ
+رشط-1¨T°#©Y¬Yً ً ً ً ٌ شًً ً s   ؤD" ؤ"Eؤ'D>ؤ>E
