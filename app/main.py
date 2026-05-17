@@ -472,4 +472,8 @@ async def analyze_tandem(video: UploadFile = File(...)) -> Dict[str, Any]:
         try:
             os.remove(path)
         except OSError:
+<<<<<<< HEAD
             pass
+=======
+            pass
+>>>>>>> aabcdbac440cd4fd6566e108e442499667a9e43b
