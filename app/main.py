@@ -39,16 +39,19 @@ ROMBERG_FEATURES = [
 ]
 
 TANDEM_FEATURES = [
-    "sh_tilt_mean", "sh_tilt_std", "sh_tilt_max", "sh_tilt_range",
-    "sh_tilt_p75", "sh_tilt_p90",
-    "hip_tilt_mean", "hip_tilt_std", "hip_tilt_max", "hip_tilt_range",
-    "hip_tilt_p75", "hip_tilt_p90",
+    "sh_tilt_mean", "sh_tilt_std", "sh_tilt_max", "sh_tilt_range", "sh_tilt_p75", "sh_tilt_p90",
+    "hip_tilt_mean", "hip_tilt_std", "hip_tilt_max", "hip_tilt_range", "hip_tilt_p75", "hip_tilt_p90",
     "hip_osc_std", "hip_osc_range",
-    "wrist_mean", "wrist_std", "elbow_std",
-    "tilt_vel_mean", "tilt_vel_std",
-    "lean_gt_15", "lean_gt_25", "lean_gt_40",
-    "hip_gt_15", "hip_gt_25",
+    "trunk_ap_lean_mean", "trunk_ap_lean_std", "trunk_ap_lean_max", "trunk_ap_lean_range",
+    "ankle_rhythm_std", "ankle_rhythm_freq", "ankle_rhythm_entropy",
+    "step_asymmetry",
+    "wrist_spread_mean", "wrist_spread_std", "elbow_spread_std",
+    "sh_tilt_vel_mean", "sh_tilt_vel_std",
+    "lean_gt15", "lean_gt25", "lean_gt40",
+    "hip_gt15", "hip_gt25",
+    "knee_spread_mean", "knee_spread_std",
     "spine_lat_mean", "spine_lat_std",
+    "hip_vel_mean", "hip_vel_std", "hip_acc_mean",
 ]
 
 RESOLUTIONS = [(640, 480), (960, 540), (1280, 720), (480, 270)]
@@ -292,7 +295,7 @@ def extract_romberg_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[
 
 
 def extract_tandem_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[str, float], int, Dict[str, List[float]]]:
-    """Extract the 26 lateral sway / lean features used by the Tandem notebook."""
+    """Extract the 39 Tandem features required by the latest tandem_back_ensemble.joblib model."""
     cap = cv2.VideoCapture(video_path)
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     if total < 2:
@@ -302,27 +305,36 @@ def extract_tandem_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[s
     indices = np.linspace(0, total - 1, n_frames, dtype=int)
     lm_seq: List[np.ndarray] = []
 
-    with mp_pose.Pose(static_image_mode=False, model_complexity=1,
-                      min_detection_confidence=0.4,
-                      min_tracking_confidence=0.4) as pose:
+    with mp_pose.Pose(
+        static_image_mode=False,
+        model_complexity=1,
+        min_detection_confidence=0.4,
+        min_tracking_confidence=0.4,
+    ) as pose:
         for idx in indices:
             cap.set(cv2.CAP_PROP_POS_FRAMES, int(idx))
             ret, frame = cap.read()
             if not ret:
                 continue
+
             for res in RESOLUTIONS:
                 rgb = cv2.cvtColor(cv2.resize(frame, res), cv2.COLOR_BGR2RGB)
                 r = pose.process(rgb)
                 if r.pose_landmarks:
-                    arr = np.array([[l.x, l.y, l.z, l.visibility] for l in r.pose_landmarks.landmark], dtype=float)
+                    arr = np.array(
+                        [[l.x, l.y, l.z, l.visibility] for l in r.pose_landmarks.landmark],
+                        dtype=float,
+                    )
                     lm_seq.append(arr)
                     break
+
     cap.release()
 
     if len(lm_seq) < 5:
         raise ValueError("Not enough body landmarks detected. Make sure the full body is visible.")
 
     lm3 = [s[:, :3] for s in lm_seq]
+
     torso_widths = np.array([abs(lm[11, 0] - lm[12, 0]) for lm in lm3])
     torso_w = float(np.mean(torso_widths) + 1e-6)
 
@@ -330,6 +342,7 @@ def extract_tandem_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[s
         np.degrees(np.arctan2(abs(lm[11, 1] - lm[12, 1]), abs(lm[11, 0] - lm[12, 0]) + 1e-6))
         for lm in lm3
     ])
+
     hip_tilts = np.array([
         np.degrees(np.arctan2(abs(lm[23, 1] - lm[24, 1]), abs(lm[23, 0] - lm[24, 0]) + 1e-6))
         for lm in lm3
@@ -341,8 +354,8 @@ def extract_tandem_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[s
     hip_osc_range = (np.max(hip_x_c) - np.min(hip_x_c)) / torso_w
 
     wrist_spread = np.array([abs(lm[15, 0] - lm[16, 0]) for lm in lm3])
-    wrist_spread_std = np.std(wrist_spread) / torso_w
     wrist_spread_mean = np.mean(wrist_spread) / torso_w
+    wrist_spread_std = np.std(wrist_spread) / torso_w
 
     elbow_spread = np.array([abs(lm[13, 0] - lm[14, 0]) for lm in lm3])
     elbow_spread_std = np.std(elbow_spread) / torso_w
@@ -362,26 +375,64 @@ def extract_tandem_features(video_path: str, n_frames: int = 30) -> Tuple[Dict[s
     spine = sh_mids - hip_mids
     spine_lateral = np.abs(spine[:, 0]) / (np.abs(spine[:, 1]) + 1e-6)
 
+    # Trunk AP lean features.
+    trunk_ap = np.abs(spine[:, 1])
+
+    # Ankle rhythm features.
+    ankle_dist = np.array([abs(lm[27, 0] - lm[28, 0]) for lm in lm3])
+    ankle_rhythm_std = np.std(ankle_dist)
+
+    fft_vals = np.abs(np.fft.fft(ankle_dist - np.mean(ankle_dist)))
+    ankle_rhythm_freq = float(np.argmax(fft_vals[1:]) + 1) if len(fft_vals) > 1 else 0.0
+
+    prob = ankle_dist / (np.sum(ankle_dist) + 1e-6)
+    ankle_rhythm_entropy = float(-np.sum(prob * np.log(prob + 1e-6)))
+
+    # Step asymmetry.
+    left_steps = np.array([lm[27, 1] for lm in lm3])
+    right_steps = np.array([lm[28, 1] for lm in lm3])
+    step_asymmetry = np.mean(np.abs(left_steps - right_steps))
+
+    # Knee spread.
+    knee_spread = np.array([abs(lm[25, 0] - lm[26, 0]) for lm in lm3])
+    knee_spread_mean = np.mean(knee_spread) / torso_w
+    knee_spread_std = np.std(knee_spread) / torso_w
+
+    # Hip velocity and acceleration.
+    hip_vel = np.diff(hip_x_c)
+    hip_acc = np.diff(hip_vel)
+    hip_vel_mean = np.mean(np.abs(hip_vel)) if len(hip_vel) else 0.0
+    hip_vel_std = np.std(hip_vel) if len(hip_vel) else 0.0
+    hip_acc_mean = np.mean(np.abs(hip_acc)) if len(hip_acc) else 0.0
+
     values = np.array([
         sh_tilts.mean(), sh_tilts.std(), sh_tilts.max(), sh_tilts.max() - sh_tilts.min(),
         np.percentile(sh_tilts, 75), np.percentile(sh_tilts, 90),
         hip_tilts.mean(), hip_tilts.std(), hip_tilts.max(), hip_tilts.max() - hip_tilts.min(),
         np.percentile(hip_tilts, 75), np.percentile(hip_tilts, 90),
         hip_osc_std, hip_osc_range,
+        trunk_ap.mean(), trunk_ap.std(), trunk_ap.max(), trunk_ap.max() - trunk_ap.min(),
+        ankle_rhythm_std, ankle_rhythm_freq, ankle_rhythm_entropy,
+        step_asymmetry,
         wrist_spread_mean, wrist_spread_std, elbow_spread_std,
         sh_tilt_velocity_mean, sh_tilt_velocity_std,
         large_lean_15, large_lean_25, large_lean_40,
         large_hip_15, large_hip_25,
+        knee_spread_mean, knee_spread_std,
         spine_lateral.mean(), spine_lateral.std(),
+        hip_vel_mean, hip_vel_std, hip_acc_mean,
     ], dtype=float)
 
     features = {name: round(float(val), 6) for name, val in zip(TANDEM_FEATURES, values)}
+
     chart = {
         "shoulder_tilt_signal": [round(float(x), 3) for x in sh_tilts[:120]],
         "hip_tilt_signal": [round(float(x), 3) for x in hip_tilts[:120]],
         "hip_sway_signal": [round(float(x), 6) for x in hip_x_c[:120]],
         "spine_lateral_signal": [round(float(x), 6) for x in spine_lateral[:120]],
+        "ankle_distance_signal": [round(float(x), 6) for x in ankle_dist[:120]],
     }
+
     return features, len(lm_seq), chart
 
 
@@ -451,21 +502,45 @@ async def analyze_romberg(video: UploadFile = File(...)) -> Dict[str, Any]:
 
 @app.post("/analyze/tandem")
 async def analyze_tandem(video: UploadFile = File(...)) -> Dict[str, Any]:
-    if not TANDEM_AVAILABLE:
-        return {
-            "test": "tandem",
-            "error": "Tandem model temporarily unavailable",
-            "message": "Finger and Romberg are working. Tandem model needs to be re-saved with compatible numpy/joblib versions."
-        }
+    if not TANDEM_AVAILABLE or tandem_model is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Tandem model is not loaded. Check tandem_back_ensemble.joblib and requirements versions.",
+        )
 
     path = await _save_upload(video)
     try:
         features, frames_used, chart = extract_tandem_features(path)
-        X = np.array([[features[k] for k in TANDEM_FEATURES]], dtype=float)
-        prob = tandem_model.predict_proba(X)[0]
+
+        # Use DataFrame to preserve feature names/order for sklearn pipelines.
+        X = pd.DataFrame([[features[k] for k in TANDEM_FEATURES]], columns=TANDEM_FEATURES)
+
+        if hasattr(tandem_model, "predict_proba"):
+            prob_raw = tandem_model.predict_proba(X)[0]
+            classes = list(getattr(tandem_model, "classes_", ["HEALTHY", "PATIENT"]))
+
+            if "HEALTHY" in classes:
+                p_healthy = float(prob_raw[classes.index("HEALTHY")])
+            else:
+                p_healthy = float(prob_raw[0])
+
+            if "PATIENT" in classes:
+                p_patient = float(prob_raw[classes.index("PATIENT")])
+            else:
+                p_patient = float(prob_raw[1]) if len(prob_raw) > 1 else 1.0 - p_healthy
+
+            prob = np.array([p_healthy, p_patient], dtype=float)
+        else:
+            pred = tandem_model.predict(X)[0]
+            p_patient = 1.0 if str(pred).upper() == "PATIENT" else 0.0
+            p_healthy = 1.0 - p_patient
+            prob = np.array([p_healthy, p_patient], dtype=float)
+
         payload = _label_payload("tandem", prob, features, frames_used, chart)
         payload["model_name"] = tandem_model_name
+        payload["features_count"] = len(TANDEM_FEATURES)
         return payload
+
     except Exception as exc:
         raise HTTPException(status_code=422, detail=str(exc))
     finally:
